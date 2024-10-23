@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MainPage">
+    <ContentPage.Resources>
+        <Color x:Key="Primary">#ab3527</Color>
+        <Color x:Key="Secundary">#775752</Color>
+        <Color x:Key="Tertiary">#705c5e</Color>
+    </ContentPage.Resources>
+    <Grid x:Name="Container" BackgroundColor="Black">
+        <Frame Margin="10,0,10,0"  VerticalOptions="Center">
+            <VerticalStackLayout Spacing="15" VerticalOptions="Center">
+                <Label FontAttributes="Bold"
+                       FontSize="Large"
+                       HorizontalTextAlignment="Center"
+                       Text="Color Maker"/>
+                <Label Text="Red Value"/>
+                <Slider x:Name="sldRed"
+                        MaximumTrackColor="{StaticResource Tertiary}"
+                        MinimumTrackColor="{StaticResource Secondary}"
+                        ThumbColor="{StaticResource Primary}"
+                        ValueChanged="sldRed_ValueChanged"/>
+                <Label Text="Gren Value"/>
+                <Slider x:Name="sldGren"
+                        MaximumTrackColor="{StaticResource Tertiary}"
+                        MinimumTrackColor="{StaticResource Secondary}"
+                        ThumbColor="{StaticResource Primary}"
+                        ValueChanged="sldRed_ValueChanged"/>
+                <Label Text="Blue Value"/>
+                <Slider x:Name="sldBlue"
+                        MaximumTrackColor="{StaticResource Tertiary}"
+                        MinimumTrackColor="{StaticResource Secondary}"
+                        ThumbColor="{StaticResource Primary}"
+                        ValueChanged="sldRed_ValueChanged"/>
+               
+                
+                <Frame CornerRadius="25" HorizontalOptions="Center">
+                    <HorizontalStackLayout>
+                        <Label x:Name="lblHex"
+                               HorizontalTextAlignment="End"
+                               Text="HEX Value #00000"
+                               TextColor="Black"
+                               VerticalOptions="Center"/>
+                        <ImageButton
+                            Margin="10,0,0,0"
+                            HeightRequest="25"
+                            Source="dotnet_bot.png"
+                            VerticalOptions="Center"
+                            WidthRequest="25"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                
+                
+                <Button x:Name="btn"
+                        BackgroundColor="{StaticResource Primary}"
+                        Text="Generate Ramdom Color"
+                        Clicked="btn_Clicked"/>
+
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>
